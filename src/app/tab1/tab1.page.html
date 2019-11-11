@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Jogo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+    <ion-card-header text-center>
+      <ion-card-title>Jogadores</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content text-center>
+      <ion-row col-12>
+        <ion-col col-6>
+          {{player1}} / Simbolo - {{player1symbol}}
+        </ion-col>
+        <ion-col col-6>
+          {{player2}} / Simbolo - {{player2symbol}}
+        </ion-col>
+      </ion-row>
+      <ion-row col-12>
+        <ion-col col-6 style="display: flex; justify-content: center;">
+            <img style="width: initial; height: 100px;" [src]="foto1" />
+        </ion-col>
+        <ion-col col-6 style="display: flex; justify-content: center;">
+            <img style="width: initial; height: 100px;" [src]="foto2" />
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+<ion-content text-center>
+  <ion-grid>
+      <ion-row center>
+        <ion-col col-12>
+            <ion-col col-4>
+                <ion-button  (click)="onClick('0-0')" size="large">
+                  {{spaces[0][0]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('0-1')" size="large">
+                  {{spaces[0][1]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('0-2')" size="large">
+                  {{spaces[0][2]}}
+                </ion-button>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row center>
+        <ion-col col-12>
+            <ion-col col-4>
+                <ion-button (click)="onClick('1-0')" size="large">
+                  {{spaces[1][0]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('1-1')" size="large">
+                  {{spaces[1][1]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('1-2')" size="large">
+                  {{spaces[1][2]}}
+                </ion-button>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row center>
+        <ion-col col-12>
+            <ion-col col-4>
+                <ion-button (click)="onClick('2-0')" size="large">
+                  {{spaces[2][0]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('2-1')" size="large">
+                  {{spaces[2][1]}}
+                </ion-button>
+              </ion-col>
+              <ion-col col-4>
+                <ion-button (click)="onClick('2-2')" size="large">
+                  {{spaces[2][2]}}
+                </ion-button>
+            </ion-col>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  <ion-row center>
+    <ion-col *ngIf="finish == true" col-12>
+        Vencedor: {{winner}}
+    </ion-col>
+  </ion-row>
+  <ion-row center>
+    <ion-col col-12>
+      <ion-button (click)="restartGame()">
+          Recomeçar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

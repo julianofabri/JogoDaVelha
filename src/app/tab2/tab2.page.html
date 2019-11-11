@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Configurações
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header text-center>
+          <ion-card-title>Jogadores</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content text-center>
+          <ion-row col-12>
+            <ion-col col-6>
+                <ion-input (ionBlur)="alterarNome($event.target.value,'p1')" value="{{p1_nome}}"></ion-input>
+                <ion-button (click)="tirarfoto('p1')">
+                  <ion-icon name="camera"></ion-icon>
+                </ion-button>
+            </ion-col>
+            <ion-col col-6>
+                <ion-input (ionBlur)="alterarNome($event.target.value,'p2')" value="{{p2_nome}}"></ion-input>
+                <ion-button (click)="tirarfoto('p2')">
+                  <ion-icon name="camera"></ion-icon>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row col-12>
+            <ion-col col-6>
+                <img [src]="foto1" />
+            </ion-col>
+            <ion-col col-6>
+                <img [src]="foto2" />
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+      
+</ion-content>
